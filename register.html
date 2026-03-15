@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register · MessPay Student Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              pastelBlue: '#bfdbfe',
+              pastelBlueSoft: '#e0f2fe',
+              mintGreen: '#a7f3d0',
+              mintGreenSoft: '#d1fae5',
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-pastelBlueSoft to-mintGreenSoft text-slate-900">
+    <header class="border-b border-white/40 bg-white/60 backdrop-blur sticky top-0 z-10">
+      <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-3">
+        <div class="flex items-center gap-2">
+          <span
+            class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-tr from-pastelBlue to-mintGreen shadow-sm"
+          >
+            <i data-lucide="wallet" class="w-5 h-5 text-slate-800"></i>
+          </span>
+          <div class="leading-tight">
+            <p class="font-semibold tracking-tight">MessPay</p>
+            <p class="text-xs text-slate-600">New student registration</p>
+          </div>
+        </div>
+        <nav class="flex items-center gap-3 text-sm">
+          <a href="index.html" class="px-3 py-1.5 rounded-full text-slate-800/80 bg-white/70 hover:bg-white shadow-sm transition"
+            >Back to login</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 md:py-10 grid gap-10 md:grid-cols-[3fr,2fr] items-start">
+      <section>
+        <h1 class="text-2xl md:text-3xl font-semibold tracking-tight mb-3">Create your MessPay account</h1>
+        <p class="text-slate-700 mb-6 max-w-xl">
+          Register once with your institute details to start tracking mess payments, wallet balance, and meal history.
+        </p>
+
+        <div
+          class="bg-white/85 backdrop-blur rounded-[18px] shadow-lg border border-white/80 max-w-md w-full p-5 sm:p-6 space-y-4"
+        >
+          <div class="flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div
+                class="h-10 w-10 rounded-[16px] bg-gradient-to-tr from-pastelBlue to-pastelBlueSoft flex items-center justify-center shadow-sm"
+              >
+                <i data-lucide="id-card" class="w-5 h-5 text-slate-900"></i>
+              </div>
+              <div class="leading-tight">
+                <p class="text-sm font-semibold tracking-tight">Student profile</p>
+                <p class="text-[11px] text-slate-500">We only ask for what we need.</p>
+              </div>
+            </div>
+          </div>
+
+          <form id="register-form" class="space-y-3">
+            <div class="grid gap-3">
+              <div>
+                <label for="full-name" class="block text-xs font-medium text-slate-700 mb-1.5">Full Name</label>
+                <input
+                  id="full-name"
+                  type="text"
+                  required
+                  class="w-full rounded-xl border border-slate-200 bg-slate-50/70 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-pastelBlue focus:border-transparent"
+                  placeholder="e.g. Ananya Sharma"
+                />
+              </div>
+
+              <div class="grid gap-3 sm:grid-cols-2">
+                <div>
+                  <label for="roll-number" class="block text-xs font-medium text-slate-700 mb-1.5">Roll Number</label>
+                  <input
+                    id="roll-number"
+                    type="text"
+                    required
+                    class="w-full rounded-xl border border-slate-200 bg-slate-50/70 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-pastelBlue focus:border-transparent"
+                    placeholder="e.g. 22CS123"
+                  />
+                </div>
+                <div>
+                  <label for="hostel-room" class="block text-xs font-medium text-slate-700 mb-1.5"
+                    >Hostel Room Number</label
+                  >
+                  <input
+                    id="hostel-room"
+                    type="text"
+                    required
+                    class="w-full rounded-xl border border-slate-200 bg-slate-50/70 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-mintGreen focus:border-transparent"
+                    placeholder="e.g. A-212"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="email" class="block text-xs font-medium text-slate-700 mb-1.5">Institute Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  required
+                  class="w-full rounded-xl border border-slate-200 bg-slate-50/70 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-pastelBlue focus:border-transparent"
+                  placeholder="you@college.edu"
+                />
+              </div>
+
+              <div>
+                <label for="reg-password" class="block text-xs font-medium text-slate-700 mb-1.5">Password</label>
+                <input
+                  id="reg-password"
+                  type="password"
+                  required
+                  minlength="6"
+                  class="w-full rounded-xl border border-slate-200 bg-slate-50/70 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-mintGreen focus:border-transparent"
+                  placeholder="Create a strong password"
+                />
+                <p class="mt-1 text-[11px] text-slate-500">Minimum 6 characters. Use a mix of letters and numbers.</p>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="mt-1 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 text-white text-sm font-medium py-2.5 shadow-sm hover:bg-slate-800 transition"
+            >
+              <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+              <span>Register</span>
+            </button>
+
+            <p id="register-status" class="text-[11px] text-slate-500 text-center mt-1"></p>
+          </form>
+
+          <p class="text-[11px] text-slate-500 text-center">
+            Already have an account?
+            <a href="index.html" class="font-medium text-slate-700 hover:text-slate-900 hover:underline">Sign in</a>
+          </p>
+        </div>
+      </section>
+
+      <aside class="space-y-4 hidden md:block">
+        <div class="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-white/70 p-4 flex flex-col gap-3">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-mintGreen/80 text-slate-900">
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+            </span>
+            <div class="text-sm">
+              <p class="font-medium">Built for students</p>
+              <p class="text-xs text-slate-600">One profile for all your mess payments and attendance.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-pastelBlue/80 text-slate-900">
+              <i data-lucide="lock" class="w-4 h-4"></i>
+            </span>
+            <div class="text-sm">
+              <p class="font-medium">Secure by design</p>
+              <p class="text-xs text-slate-600">Use Firebase Auth + database rules to protect student data.</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="max-w-5xl mx-auto px-4 pb-6 text-[11px] text-slate-500 flex items-center justify-between">
+      <span>&copy; <span id="year"></span> MessPay. All rights reserved.</span>
+      <span class="hidden sm:inline">Registration · Tailwind + Firebase-ready</span>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const form = document.getElementById('register-form');
+      const statusEl = document.getElementById('register-status');
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const student = {
+          fullName: document.getElementById('full-name').value.trim(),
+          rollNumber: document.getElementById('roll-number').value.trim(),
+          hostelRoom: document.getElementById('hostel-room').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          // Never store plain passwords in production. Use Firebase Auth.
+          password: document.getElementById('reg-password').value,
+          createdAt: new Date().toISOString(),
+        };
+
+        statusEl.textContent = 'Registering student…';
+
+        try {
+          // Example with Firebase Realtime Database:
+          // Make sure you:
+          // 1. Initialize Firebase in js/firebase-config.js
+          // 2. Include the Firebase SDK scripts before this script.
+          //
+          // const db = firebase.database();
+          // await db.ref('students').push(student);
+          //
+          // For now, we just log to the console as a placeholder:
+          console.log('Student registration payload →', student);
+
+          statusEl.textContent = 'Student registered (mock). Wire this to Firebase in js/firebase-config.js.';
+          statusEl.classList.remove('text-red-500');
+          statusEl.classList.add('text-emerald-600');
+
+          form.reset();
+        } catch (error) {
+          console.error(error);
+          statusEl.textContent = 'Registration failed. Check the console for details.';
+          statusEl.classList.remove('text-emerald-600');
+          statusEl.classList.add('text-red-500');
+        }
+      });
+
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    </script>
+  </body>
+</html>
+
