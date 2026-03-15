@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile · MessPay Student Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              pastelBlue: '#bfdbfe',
+              pastelBlueSoft: '#e0f2fe',
+              mintGreen: '#a7f3d0',
+              mintGreenSoft: '#d1fae5',
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900">
+    <div class="min-h-screen flex flex-col pb-16">
+      <!-- Top navigation -->
+      <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span
+              class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-tr from-pastelBlue to-mintGreen shadow-sm"
+            >
+              <i data-lucide="user-round" class="w-5 h-5 text-slate-800"></i>
+            </span>
+            <div class="leading-tight">
+              <p class="text-xs font-medium text-slate-500">MessPay Student Portal</p>
+              <p class="text-sm font-semibold tracking-tight">Profile</p>
+            </div>
+          </div>
+
+          <a
+            href="dashboard.html"
+            class="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+          >
+            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+            <span>Back to dashboard</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <main class="flex-1">
+        <div class="max-w-5xl mx-auto px-4 py-6 space-y-6">
+          <!-- Profile header -->
+          <section class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div
+                class="h-20 w-20 rounded-full bg-gradient-to-br from-pastelBlueSoft to-mintGreenSoft border border-white shadow-md flex items-center justify-center text-2xl font-semibold text-slate-800"
+                id="profile-avatar"
+              >
+                S
+              </div>
+              <div>
+                <h1 id="profile-name" class="text-xl sm:text-2xl font-semibold tracking-tight text-slate-900">
+                  Student Name
+                </h1>
+                <p id="profile-roll" class="text-sm text-slate-600">Roll Number · —</p>
+              </div>
+            </div>
+
+            <div class="flex gap-2">
+              <button
+                type="button"
+                class="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-800 hover:bg-slate-50"
+              >
+                <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
+                <span>Edit Profile</span>
+              </button>
+              <button
+                type="button"
+                class="inline-flex items-center gap-1.5 rounded-full bg-slate-900 text-white px-3 py-1.5 text-xs font-medium shadow-sm hover:bg-slate-800"
+              >
+                <i data-lucide="key-round" class="w-3.5 h-3.5"></i>
+                <span>Change Password</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="grid gap-4 md:grid-cols-[2fr,1.5fr] items-start">
+            <!-- Personal information card -->
+            <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-5 space-y-3">
+              <h2 class="text-sm font-medium text-slate-800 mb-1.5 flex items-center gap-1.5">
+                <i data-lucide="id-card" class="w-4 h-4"></i>
+                Personal information
+              </h2>
+              <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
+                <div>
+                  <dt class="text-xs uppercase tracking-[0.12em] text-slate-500">Roll Number</dt>
+                  <dd id="info-roll" class="mt-0.5 text-slate-900">—</dd>
+                </div>
+                <div>
+                  <dt class="text-xs uppercase tracking-[0.12em] text-slate-500">Hostel Room</dt>
+                  <dd id="info-room" class="mt-0.5 text-slate-900">—</dd>
+                </div>
+                <div class="sm:col-span-2">
+                  <dt class="text-xs uppercase tracking-[0.12em] text-slate-500">Email</dt>
+                  <dd id="info-email" class="mt-0.5 text-slate-900 break-all">—</dd>
+                </div>
+                <div class="sm:col-span-2">
+                  <dt class="text-xs uppercase tracking-[0.12em] text-slate-500">Phone</dt>
+                  <dd id="info-phone" class="mt-0.5 text-slate-900">Not provided</dd>
+                </div>
+              </dl>
+            </div>
+
+            <!-- Biometric security card -->
+            <div class="bg-gradient-to-br from-pastelBlueSoft to-mintGreenSoft rounded-2xl border border-white shadow-sm p-5 space-y-3">
+              <h2 class="text-sm font-medium text-slate-800 flex items-center gap-1.5">
+                <i data-lucide="fingerprint" class="w-4 h-4"></i>
+                Biometric security
+              </h2>
+              <div class="text-sm text-slate-800 space-y-2">
+                <p class="flex items-center justify-between">
+                  <span class="text-xs uppercase tracking-[0.12em] text-slate-600">Fingerprint ID</span>
+                  <span id="fingerprint-id" class="font-medium text-slate-900">—</span>
+                </p>
+                <p class="flex items-center justify-between">
+                  <span class="text-xs uppercase tracking-[0.12em] text-slate-600">Status</span>
+                  <span id="fingerprint-status" class="inline-flex items-center gap-1 text-emerald-600">
+                    <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                    <span>Verified</span>
+                  </span>
+                </p>
+                <p
+                  id="fingerprint-warning"
+                  class="mt-1 text-xs text-amber-700 bg-amber-50/80 border border-amber-100 rounded-xl px-3 py-2 hidden"
+                >
+                  Biometric not registered. Visit mess office.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- Bottom navigation (same structure as dashboard) -->
+    <nav
+      class="fixed inset-x-0 bottom-0 z-20 border-t border-slate-200 bg-white/95 backdrop-blur py-1.5"
+      aria-label="Primary"
+    >
+      <div class="max-w-md mx-auto px-6">
+        <ul class="flex items-center justify-between text-xs text-slate-500">
+          <li>
+            <a href="dashboard.html" class="flex flex-col items-center gap-0.5 hover:text-slate-900">
+              <i data-lucide="home" class="w-5 h-5"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="wallet.html" class="flex flex-col items-center gap-0.5 hover:text-slate-900">
+              <i data-lucide="wallet-cards" class="w-5 h-5"></i>
+              <span>Wallet</span>
+            </a>
+          </li>
+          <li>
+            <a href="profile.html" class="flex flex-col items-center gap-0.5 text-slate-900">
+              <i data-lucide="user" class="w-5 h-5"></i>
+              <span>Profile</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <script type="module">
+      import { loadUserProfile } from './js/database.js';
+
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+
+      // TODO: Replace with real logged-in student ID, e.g. from auth state or localStorage.
+      const MOCK_STUDENT_ID = 'demo-student-id';
+      loadUserProfile(MOCK_STUDENT_ID);
+    </script>
+  </body>
+</html>
+
